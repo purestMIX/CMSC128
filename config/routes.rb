@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :medicines
+  get 'medicine/new'
+
   get 'sessions/new'
 
   get 'users/new'

@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Medicines</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Generic</th>
+      <th>Brand</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Mg</th>
+      <th colspan="10"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicines.each do |medicine| %>
+      <tr>
+        <td><%= medicine.generic %></td>
+        <td><%= medicine.brand %></td>
+        <td><%= medicine.price %></td>
+        <td><%= medicine.Quantity %></td>
+        <td><%= medicine.mg %></td>
+        <td><%= link_to 'Show', medicine %></td>
+        <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
+        <td><%= link_to 'Destroy', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medicine', new_medicine_path %>
