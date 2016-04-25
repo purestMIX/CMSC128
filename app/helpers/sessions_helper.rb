@@ -4,7 +4,12 @@ module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id
   end
-
+  def require_admin()
+    if(not current_user.admin?) 
+      flash[:error]= "You are not allowed to perform this action"
+      redirect_to medicines_path
+    end
+  end
   # Remembers a user in a persistent session.
   def remember(user)
     user.remember

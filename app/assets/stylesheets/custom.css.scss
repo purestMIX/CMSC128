@@ -196,3 +196,22 @@ input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+table {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  border-bottom: 2px solid blue;
+  th {
+  border: 2px solid black;
+  font-weight: bold;
+  background-color: blue;
+  }
+  th, td {
+    border: 2px solid black;
+    padding: 4px;
+    text-align: left;
+  }
+  th.hilite {
+    background-color: blue;
+  }
+}

@@ -5,7 +5,14 @@
 <table>
   <thead>
     <tr>
-      <th>Medicine</th>
+      <th>Generic</th>
+      <th>Brand</th>
+      <th>Price(Pesos)</th>
+      <th>Quantity</th>
+      <th>mg</th>
+      <th>Medicine info</th>
+      <th>Edit Medicine</th>
+      <th>Delete Medicine</th>
       <th colspan="10"></th>
     </tr>
   </thead>
@@ -18,9 +25,9 @@
         <td><%= medicine.price %></td>
         <td><%= medicine.Quantity %></td>
         <td><%= medicine.mg %></td>
-        <td><%= link_to 'Show', medicine %></td>
-        <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
-        <td><%= link_to 'Destroy', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show Medicines', medicine %></td>
+        <td><%= link_to 'Update Information', edit_medicine_path(medicine) %></td>
+        <td><%= link_to 'Remove', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -1,6 +1,6 @@
 class MedicinesController < ApplicationController
+  before_action :require_admin, only:[:new,:edit,:destroy]
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
-
   # GET /medicines
   # GET /medicines.json
   def index
