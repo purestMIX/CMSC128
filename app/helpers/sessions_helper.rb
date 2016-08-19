@@ -63,4 +63,10 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+  def checked(price)
+    if @checked_price.nil?
+        @checked_price = Medicines.all_prices
+    end
+    return @checked_ratings.include?(price)
+  end
 end

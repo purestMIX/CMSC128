@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   get 'users/new'
-
+  get 'search' => 'medicines#search' , as: 'search'
+    get 'search_results' => 'medicines#search_results' , as: 'search_results'
   root             'static_pages#home'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'

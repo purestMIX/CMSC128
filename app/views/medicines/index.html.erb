@@ -1,38 +1,8 @@
-<p id="notice"><%= notice %></p>
-
+<Medicine class="medicines">
 <h1>Listing Medicines</h1>
-
 <table>
-  <thead>
-    <tr>
-      <th>Generic</th>
-      <th>Brand</th>
-      <th>Price(Pesos)</th>
-      <th>Quantity</th>
-      <th>mg</th>
-      <th>Medicine info</th>
-      <th>Edit Medicine</th>
-      <th>Delete Medicine</th>
-      <th colspan="10"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @medicines.each do |medicine| %>
-      <tr>
-        <td><%= medicine.generic %></td>
-        <td><%= medicine.brand %></td>
-        <td><%= medicine.price %></td>
-        <td><%= medicine.Quantity %></td>
-        <td><%= medicine.mg %></td>
-        <td><%= link_to 'Show Medicines', medicine %></td>
-        <td><%= link_to 'Update Information', edit_medicine_path(medicine) %></td>
-        <td><%= link_to 'Remove', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+  <%=render 'tablehead'%>
 </table>
-
-<br>
-
 <%= link_to 'New Medicine', new_medicine_path %>
+<%= render 'search'%>
+</Medicine>

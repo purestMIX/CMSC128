@@ -3,8 +3,19 @@ class MedicinesController < ApplicationController
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
   # GET /medicines
   # GET /medicines.json
+
   def index
-    @medicines = Medicine.all
+    redirect = false
+    if params.has_key?(:sort) && !params[:sort].nil?
+      @sort = params[:sort] # Get sorting info from URL params
+      session[:sort] = @sort
+    elsif session.has_key?(:sort) && !session[:sort].nil?
+      @sort = session[:sort] # Get sorting info from session cookie
+      redirect = true
+    else
+      @sort = :id # Sort by ID by default
+    end
+    @medicines = Medicine.all()# Do a single database query with ordering and filtering
   end
 
   # GET /medicines/1
@@ -20,7 +31,8 @@ class MedicinesController < ApplicationController
   # GET /medicines/1/edit
   def edit
   end
-
+  def search_results
+  end
   # POST /medicines
   # POST /medicines.json
   def create
@@ -36,7 +48,8 @@ class MedicinesController < ApplicationController
       end
     end
   end
-
+  def search
+  end
   # PATCH/PUT /medicines/1
   # PATCH/PUT /medicines/1.json
   def update
