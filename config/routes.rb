@@ -8,8 +8,11 @@ Rails.application.routes.draw do
   get 'search' => 'medicines#search' , as: 'search'
     get 'search_results' => 'medicines#search_results' , as: 'search_results'
   root             'sessions#new'
-  get 'help'    => 'static_pages#help'
+  
+  get 'help'    => 'sessions#help'
+  
   get 'about'   => 'static_pages#about'
+  
   get 'contact' => 'static_pages#contact'
   get 'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
