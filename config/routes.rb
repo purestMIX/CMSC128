@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'search' => 'medicines#search' , as: 'search'
     get 'search_results' => 'medicines#search_results' , as: 'search_results'
-  root             'static_pages#home'
+  root             'sessions#new'
   get 'help'    => 'static_pages#help'
   get 'about'   => 'static_pages#about'
   get 'contact' => 'static_pages#contact'
