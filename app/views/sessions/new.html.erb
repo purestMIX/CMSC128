@@ -49,7 +49,7 @@
         height: 100%;
         overflow: auto;
       }
-      .jumbotron{
+      .jumbotron#home{
         background-color: rgba(0,0,0,.5);
         color: white;
         padding-left:50px;
@@ -108,9 +108,7 @@
       </div>
     </nav>  
     
-    <div class="jumbotron" align="center">
-      <!--<h1>PharmaC</h1>-->
-      <!--<p><em>Your online medicine inventory app</em></p>-->
+    <div class="jumbotron" align="center" id="home">
       <img src="http://i.imgur.com/vaXZG8U.png" height="268" width="400"/>
       <center>
       <form class="form-horizontal" align:"center">
@@ -119,7 +117,7 @@
         
         <!--email for login-->
         <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', placeholder:"example@gmail.com" %>
+        <%= f.email_field :email, class: 'form-control', placeholder:"email@example.com" %>
         <!--password for login-->
         <%= f.label :password %>
         <%= f.password_field :password, class: 'form-control', placeholder:"Enter password" %>
@@ -134,8 +132,7 @@
         <%   end %> 
         </form>
     </center>
-    </d
-    iv>
+    </div>
     
     
 
