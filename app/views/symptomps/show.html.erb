@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Symptompsname:</strong>
+  <%= @symptomp.symptompsName %>
+</p>
+
+<p>
+  <strong>Symptompsdesc:</strong>
+  <%= @symptomp.symptompsDesc %>
+</p>
+
+<%= link_to 'Edit', edit_symptomp_path(@symptomp) %> |
+<%= link_to 'Back', symptomps_path %>

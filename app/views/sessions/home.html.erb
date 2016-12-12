@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> PharmaC App </title>
+    
+    <%= stylesheet_link_tag "application", media: "all",
+                                           "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <style>
+      .navbar-fixed-top{
+        min-height: 70px;
+        margin-bottom: 0px;
+        border: 1px solid transparent;
+      }
+      .navbar-brand{
+        font-size: 30px;
+        line-height: 40px;
+      }
+      .navbar-nav>li>a {
+        padding-top: 25px;
+        padding-bottom: 20px;
+      }
+      .navbar-nav>li>h5{
+        color: gray;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+      }
+      body{
+        background: url("http://www.business-opportunities.biz/wp-content/uploads/2012/03/pills.jpg");
+        background-size: cover;
+      }
+      .overlay{
+        background-color:black;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index: -1;
+        opacity:0.3;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+      }
+      .jumbotron#home{
+        background-color: rgba(0,0,0,.5);
+        color: white;
+        padding-left:50px;
+        padding-right:50px;
+      }
+      .jumbotron > h1{
+        margin-top:70px;
+      }
+      .small{
+        color: white;
+      }
+      .form-group>label{
+        color: white;
+      }
+      .form-control{
+         background-color: transparent;
+         color: white;
+      }
+      form{
+        margin-top: 5px;  
+        width: 30%;
+      }
+      label{
+        float:left;
+      }
+      .btn-success{
+        margin-top:5px;
+        margin-bottom:30spx;
+        opacity:.8;
+      }
+      hr{
+        width:30%;
+        margin-top:30px;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    
+    <!-- this html is for the header-->
+    <nav class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><img src="http://i.imgur.com/c5hrXky.png" height="50" width="214"/></a>
+        </div>
+        
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="home"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+            <li><a href="help"><span class="glyphicon glyphicon-info-sign"></span> About </a></li>
+            <li><a href="sign_up"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>  
+    
+    <div class="jumbotron" align="center" id="home">
+      <img src="http://i.imgur.com/vaXZG8U.png" height="268" width="400"/>
+      <center>
+      <form class="form-horizontal" align:"center">
+        
+        <%= form_for(:session, url: login_path) do |f| %>
+        
+        <!--email for login-->
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control', placeholder:"email@example.com" %>
+        <!--password for login-->
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control', placeholder:"Enter password" %>
+       
+        <!--remember for login-->
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        
+        <span>Remember me on this computer</span>
+        <% end %>
+        <%= f.submit "Log in", class: "btn btn-success" ,role: "button", id:"login_button"%>
+        <%   end %> 
+        </form>
+    </center>
+    </div>
+    
+    
+
+    <nav class="navbar navbar-fixed-bottom navbar-inverse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><h5> The PharmaC App by UP students </h5></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"> About </a></li>
+          <li><a href="#"> Contact </a></li>
+          <li><a href="#"> News </a></li>
+        </ul>
+      </div>
+    </nav>
+    
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<%= form_for(@generic) do |f| %>
+  <% if @generic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@generic.errors.count, "error") %> prohibited this generic from being saved:</h2>
+
+      <ul>
+      <% @generic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :genericName %><br>
+    <%= f.text_field :genericName %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br>
+    <%= f.text_field :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

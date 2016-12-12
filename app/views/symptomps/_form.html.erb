@@ -1,0 +1,25 @@
+<%= form_for(@symptomp) do |f| %>
+  <% if @symptomp.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@symptomp.errors.count, "error") %> prohibited this symptomp from being saved:</h2>
+
+      <ul>
+      <% @symptomp.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :symptompsName %><br>
+    <%= f.text_field :symptompsName %>
+  </div>
+  <div class="field">
+    <%= f.label :symptompsDesc %><br>
+    <%= f.text_field :symptompsDesc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

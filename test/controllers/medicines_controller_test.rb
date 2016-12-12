@@ -18,7 +18,7 @@ class MedicinesControllerTest < ActionController::TestCase
 
   test "should create medicine" do
     assert_difference('Medicine.count') do
-      post :create, medicine: { Quantity: @medicine.Quantity, brand: @medicine.brand, generic: @medicine.generic, mg: @medicine.mg, price: @medicine.price }
+      post :create, medicine: { Classification: @medicine.Classification, brandId: @medicine.brandId, genericId: @medicine.genericId, medType: @medicine.medType }
     end
 
     assert_redirected_to medicine_path(assigns(:medicine))
@@ -35,7 +35,7 @@ class MedicinesControllerTest < ActionController::TestCase
   end
 
   test "should update medicine" do
-    patch :update, id: @medicine, medicine: { Quantity: @medicine.Quantity, brand: @medicine.brand, generic: @medicine.generic, mg: @medicine.mg, price: @medicine.price }
+    patch :update, id: @medicine, medicine: { Classification: @medicine.Classification, brandId: @medicine.brandId, genericId: @medicine.genericId, medType: @medicine.medType }
     assert_redirected_to medicine_path(assigns(:medicine))
   end
 

@@ -12,24 +12,20 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :generic %><br>
-    <%= f.text_field :generic %>
+    <%= f.label :brandId %><br>
+    <%= f.number_field :brandId %>
   </div>
   <div class="field">
-    <%= f.label :brand %><br>
-    <%= f.text_field :brand %>
+    <%= f.label :genericId %><br>
+    <%= f.number_field :genericId %>
   </div>
   <div class="field">
-    <%= f.label :price %><br>
-    <%= f.number_field :price %>
+    <%= f.label :medType %><br>
+    <%= f.text_field :medType %>
   </div>
   <div class="field">
-    <%= f.label :Quantity %><br>
-    <%= f.number_field :Quantity %>
-  </div>
-  <div class="field">
-    <%= f.label :mg %><br>
-    <%= f.number_field :mg %>
+    <%= f.label :Classification %><br>
+    <%= f.text_field :Classification %>
   </div>
   <div class="actions">
     <%= f.submit %>

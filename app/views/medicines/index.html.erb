@@ -1,8 +1,33 @@
-<Medicine class="medicines">
+<p id="notice"><%= notice %></p>
+
 <h1>Listing Medicines</h1>
+
 <table>
-  <%=render 'tablehead'%>
+  <thead>
+    <tr>
+      <th>Brandid</th>
+      <th>Genericid</th>
+      <th>Medtype</th>
+      <th>Classification</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicines.each do |medicine| %>
+      <tr>
+        <td><%= medicine.brandId %></td>
+        <td><%= medicine.genericId %></td>
+        <td><%= medicine.medType %></td>
+        <td><%= medicine.Classification %></td>
+        <td><%= link_to 'Show', medicine %></td>
+        <td><%= link_to 'Edit', edit_medicine_path(medicine) %></td>
+        <td><%= link_to 'Destroy', medicine, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
+
+<br>
+
 <%= link_to 'New Medicine', new_medicine_path %>
-<%= render 'search'%>
-</Medicine>

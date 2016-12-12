@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
+  resources :users
+  resources :symptomps
+  resources :med_symptomps
+  resources :generics
+  resources :brands
   resources :medicines
-  
+  resources :stocks
   # welcome page routing
-  root             'sessions#new'
-  get 'home'    => 'sessions#new'
+  root             'sessions#home'
+  get 'home'    => 'sessions#home'
   get 'help'    => 'sessions#help'
-  get 'sign_up' => 'sessions#sign_up'
+  get 'sign_up' => 'users#new'
   
   
   get 'medicine/new'
@@ -21,5 +26,5 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  resources :users
+  
 end

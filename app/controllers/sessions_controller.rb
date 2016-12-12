@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def help
   end
   
-  def sign_up
+  def home
   end
   
   def create

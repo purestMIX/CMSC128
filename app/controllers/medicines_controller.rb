@@ -1,21 +1,10 @@
 class MedicinesController < ApplicationController
-  before_action :require_admin, only:[:new,:edit,:destroy]
   before_action :set_medicine, only: [:show, :edit, :update, :destroy]
+
   # GET /medicines
   # GET /medicines.json
-
   def index
-    redirect = false
-    if params.has_key?(:sort) && !params[:sort].nil?
-      @sort = params[:sort] # Get sorting info from URL params
-      session[:sort] = @sort
-    elsif session.has_key?(:sort) && !session[:sort].nil?
-      @sort = session[:sort] # Get sorting info from session cookie
-      redirect = true
-    else
-      @sort = :id # Sort by ID by default
-    end
-    @medicines = Medicine.all()# Do a single database query with ordering and filtering
+    @medicines = Medicine.all
   end
 
   # GET /medicines/1
@@ -31,8 +20,7 @@ class MedicinesController < ApplicationController
   # GET /medicines/1/edit
   def edit
   end
-  def search_results
-  end
+
   # POST /medicines
   # POST /medicines.json
   def create
@@ -48,8 +36,7 @@ class MedicinesController < ApplicationController
       end
     end
   end
-  def search
-  end
+
   # PATCH/PUT /medicines/1
   # PATCH/PUT /medicines/1.json
   def update
@@ -82,6 +69,6 @@ class MedicinesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medicine_params
-      params.require(:medicine).permit(:generic, :brand, :price, :Quantity, :mg)
+      params.require(:medicine).permit(:brandId, :genericId, :medType, :Classification)
     end
 end
