@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # welcome page routing
   root             'sessions#home'
   get 'home'    => 'sessions#home'
-  get 'help'    => 'sessions#help'
+  get 'help'    => 'static_pages#help'
   get 'sign_up' => 'users#new'
   
   
